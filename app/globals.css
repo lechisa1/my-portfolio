@@ -1,26 +1,121 @@
+/* Tailwind v4 imports */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 @import "tailwindcss";
-
+/* Custom CSS variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground-rgb: 17, 24, 39; /* Dark gray for text */
+  --background-gradient: linear-gradient(
+    135deg,
+    rgb(59, 130, 246) 0%,   /* blue-500 */
+    rgb(139, 92, 246) 50%,  /* violet-500 */
+    rgb(236, 72, 153) 100%  /* pink-500 */
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 249, 250, 251; /* almost white */
+    --background-gradient: linear-gradient(
+      135deg,
+      rgb(17, 24, 39) 0%,    /* gray-900 */
+      rgb(30, 41, 59) 50%,   /* slate-800 */
+      rgb(51, 65, 85) 100%   /* slate-700 */
+    );
   }
 }
 
+/* Body styling */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-gradient);
+  min-height: 100vh;
+  background-attachment: fixed; /* Parallax effect */
 }
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.animate-bounce-slow-delayed {
+  animation: bounce-slow 3s infinite;
+  animation-delay: 1s;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
