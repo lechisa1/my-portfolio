@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaCheckCircle, FaLaptopCode, FaCogs, FaBriefcase } from "react-icons/fa";
+import { FaCheckCircle, FaLaptopCode, FaBriefcase } from "react-icons/fa";
 
 export default function Experience() {
   const [isVisible, setIsVisible] = useState(false);

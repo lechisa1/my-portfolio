@@ -46,7 +46,9 @@ const About = () => {
         <div className="flex justify-center md:justify-end">
           <div
             className={`relative group transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
             }`}
           >
             <div className="absolute -inset-2 bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
@@ -62,7 +64,9 @@ const About = () => {
               <h3 className="text-2xl font-bold text-white mt-4 text-center">
                 Lechisa Bedasa
               </h3>
-              <p className="text-indigo-400 text-center">Full-Stack Developer</p>
+              <p className="text-indigo-400 text-center">
+                Full-Stack Developer
+              </p>
 
               {/* Decorative elements */}
               <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div>
@@ -92,57 +96,71 @@ const About = () => {
 
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
             I'm a passionate{" "}
-            <span className="font-semibold text-indigo-400">Full-Stack Developer</span>{" "}
-            who enjoys building scalable web applications and delivering clean, efficient code. With experience across modern frontend and backend frameworks, I transform ideas into user-friendly digital solutions.
+            <span className="font-semibold text-indigo-400">
+              Full-Stack Developer
+            </span>{" "}
+            who enjoys building scalable web applications and delivering clean,
+            efficient code. With experience across modern frontend and backend
+            frameworks, I transform ideas into user-friendly digital solutions.
           </p>
 
           <p className="text-lg text-gray-300 leading-relaxed mb-10">
-            Beyond coding, I'm always exploring new technologies, mentoring peers, and contributing to open-source projects. My goal is to create products that are not only functional but also provide an excellent user experience.
+            Beyond coding, I'm always exploring new technologies, mentoring
+            peers, and contributing to open-source projects. My goal is to
+            create products that are not only functional but also provide an
+            excellent user experience.
           </p>
 
           {/* Stats / Highlights */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 text-center hover:shadow-lg transition-all hover:scale-105">
-              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">2+</h4>
+              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                2+
+              </h4>
               <p className="text-gray-400">Years Experience</p>
             </div>
 
             <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 text-center hover:shadow-lg transition-all hover:scale-105">
-              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">15+</h4>
+              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                15+
+              </h4>
               <p className="text-gray-400">Projects Completed</p>
             </div>
 
             <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 text-center hover:shadow-lg transition-all hover:scale-105">
-              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">5+</h4>
+              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                5+
+              </h4>
               <p className="text-gray-400">Technologies Mastered</p>
             </div>
 
             <div className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 text-center hover:shadow-lg transition-all hover:scale-105">
-              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">∞</h4>
+              <h4 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                ∞
+              </h4>
               <p className="text-gray-400">Learning Mindset</p>
             </div>
           </div>
 
           {/* Education & Location */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div className="flex items-center gap-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all hover:scale-105">
-  <FaUniversity className="text-indigo-400 text-2xl" />
-  <div>
-    <h4 className="text-white font-semibold">Education</h4>
-    <p className="text-gray-400">BSc Software Engineering</p>
-    <p className="text-gray-400">Haramaya University</p>
-    <p className="text-gray-400">Graduated: 2024</p>
-  </div>
-</div>
-
+            <div className="flex items-center gap-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all hover:scale-105">
+              <FaUniversity className="text-indigo-400 text-2xl" />
+              <div>
+                <h4 className="text-white font-semibold">Education</h4>
+                <p className="text-gray-400">BSc Software Engineering</p>
+                <p className="text-gray-400">Haramaya University</p>
+                <p className="text-gray-400">Graduated: 2024</p>
+              </div>
+            </div>
 
             <div className="flex items-center gap-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all hover:scale-105">
-  <FaMapMarkerAlt className="text-indigo-400 text-2xl" />
-  <div>
-    <h4 className="text-white font-semibold">Location</h4>
-    <p className="text-gray-400">Addis Ababa, Ethiopia</p>
-  </div>
-</div>
+              <FaMapMarkerAlt className="text-indigo-400 text-2xl" />
+              <div>
+                <h4 className="text-white font-semibold">Location</h4>
+                <p className="text-gray-400">Addis Ababa, Ethiopia</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
