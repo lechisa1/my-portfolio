@@ -98,7 +98,7 @@ const About = () => {
           </h2>
 
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            I'm a passionate{" "}
+            I&apos;m a passionate{" "}
             <span className="font-semibold text-indigo-400">
               Full-Stack Developer
             </span>{" "}
