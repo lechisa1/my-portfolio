@@ -9,49 +9,57 @@ export default function Experience() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+type Status = "Current" | "Active" | "Completed";
 
-  const experiences = [
-    {
-      role: "Fullstack Developer",
-      company: "Ethiopian Artificial Intelligence (EAI)",
-      date: "Jan 2024 – Present",
-      status: "Current",
-      details: [
-        "Working on multiple projects as fullstack and backend developer.",
-        "Building scalable apps with Node.js, Next.js, and Nest.js.",
-        "Developing REST & GraphQL APIs.",
-      ],
-      technologies: ["Node.js", "Next.js", "Nest.js", "GraphQL", "REST APIs"],
-    },
-{
-  role: "Freelance / Remote Developer",
-  company: "Available for Hire",
-  date: "Active Anytime",
-  status: "Active",
-  details: [
-    "Open for freelance and remote opportunities with clients worldwide, delivering high-quality web applications.",
-   "Proficient in building fullstack projects independently, focusing on backend development and functionality, while collaborating on UI/UX design with designers.",
+interface Experience {
+  role: string;
+  company: string;
+  date: string;
+  status: Status;
+  details: string[];
+  technologies: string[];
+}
 
-    "Skilled in optimizing performance, ensuring scalability, and writing clean, maintainable code.",
-    "Adaptable to various project requirements and committed to delivering solutions on time."
-  ],
-  technologies: ["React", "Node.js", "Tailwind", "PostgreSQL", "GraphQL", "Next.js"],
-},
-
-    {
-      role: "Intern – Software Design & Development",
-      company: "EAI",
-      date: "Jun 2023 – Dec 2023",
-      status: "Completed",
-      details: [
-        "Features Implemented: Incident reporting, crime tracking, case assignment, and system notifications.",
-        "Worked on system design, backend logic, and testing functionalities.",
-        "Developed backend services using Laravel with focus on API design and database optimization.",
-        "Implemented authentication and role-based authorization systems.",
-      ],
-      technologies: ["Laravel", "Bootstrap", "MySQL", "Blade"],
-    },
-  ];
+const experiences: Experience[] = [
+  {
+    role: "Fullstack Developer",
+    company: "Ethiopian Artificial Intelligence (EAI)",
+    date: "Jan 2024 – Present",
+    status: "Current",
+    details: [
+      "Working on multiple projects as fullstack and backend developer.",
+      "Building scalable apps with Node.js, Next.js, and Nest.js.",
+      "Developing REST & GraphQL APIs.",
+    ],
+    technologies: ["Node.js", "Next.js", "Nest.js", "GraphQL", "REST APIs"],
+  },
+  {
+    role: "Freelance / Remote Developer",
+    company: "Available for Hire",
+    date: "Active Anytime",
+    status: "Active",
+    details: [
+      "Open for freelance and remote opportunities with clients worldwide, delivering high-quality web applications.",
+      "Proficient in building fullstack projects independently, focusing on backend development and functionality, while collaborating on UI/UX design with designers.",
+      "Skilled in optimizing performance, ensuring scalability, and writing clean, maintainable code.",
+      "Adaptable to various project requirements and committed to delivering solutions on time.",
+    ],
+    technologies: ["React", "Node.js", "Tailwind", "PostgreSQL", "GraphQL", "Next.js"],
+  },
+  {
+    role: "Intern – Software Design & Development",
+    company: "EAI",
+    date: "Jun 2023 – Dec 2023",
+    status: "Completed",
+    details: [
+      "Features Implemented: Incident reporting, crime tracking, case assignment, and system notifications.",
+      "Worked on system design, backend logic, and testing functionalities.",
+      "Developed backend services using Laravel with focus on API design and database optimization.",
+      "Implemented authentication and role-based authorization systems.",
+    ],
+    technologies: ["Laravel", "Bootstrap", "MySQL", "Blade"],
+  },
+];
 
   const statusColors = {
     Current: "bg-green-900/30 text-green-400 border border-green-600",
@@ -103,11 +111,10 @@ export default function Experience() {
               <div className="p-6 bg-gray-900/70 backdrop-blur-md rounded-xl shadow-lg border border-gray-800 hover:scale-105 transition-transform duration-500">
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
-                  <span
-                    className={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[exp.status]}`}
-                  >
-                    {exp.status}
-                  </span>
+<span className={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[exp.status]}`}>
+  {exp.status}
+</span>
+
                 </div>
                 <p className="text-indigo-400 font-medium">{exp.company}</p>
                 <p className="text-sm text-gray-400 mb-4">{exp.date}</p>
