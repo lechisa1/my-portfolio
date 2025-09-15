@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
 
 interface ProjectCardProps {
   title: string;
@@ -30,27 +30,30 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);
+const sectionRef = useRef(null);
+useEffect(() => {
+  const target = sectionRef.current; // copy once
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
       }
-    };
-  }, []);
+    },
+    { threshold: 0.2 }
+  );
+
+  if (target) {
+    observer.observe(target);
+  }
+
+  return () => {
+    if (target) {
+      observer.unobserve(target);
+    }
+  };
+}, []);
+
 
   return (
     <div
@@ -120,11 +123,11 @@ const ProjectCard = ({
           {contributions && contributions.length > 0 && (
             <div>
               <h4 className="text-sm font-semibold text-gray-200 mb-1">
-                My Contributions:
+                My Contributions :
               </h4>
               <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
                 {contributions.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx} className="flex items-start space-x-2 text-gray-300"><FaCheckCircle className="text-indigo-500 mt-1" /><span>{item}</span></li>
                 ))}
               </ul>
             </div>
@@ -138,7 +141,7 @@ const ProjectCard = ({
               </h4>
               <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
                 {features.map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
+                  <li key={idx} className="flex items-start space-x-2 text-gray-300"><FaCheckCircle className="text-indigo-500 mt-1" /><span>{feature}</span></li>
                 ))}
               </ul>
             </div>

@@ -133,7 +133,7 @@ export default function Experience() {
                       {exp.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700"
+                         className="bg-indigo-900/50 text-indigo-300 text-xs px-3 py-1 rounded-full border border-indigo-700/30"
                         >
                           {tech}
                         </span>

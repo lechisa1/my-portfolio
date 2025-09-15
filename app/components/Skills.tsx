@@ -62,15 +62,15 @@ const Skills = () => {
   const skills = [
     { name: "React / Next.js", level: 95, icon: <><FaReact size={22} /> <TbBrandNextjs size={22} /></>, gradient: "from-cyan-400 to-blue-500" },
     { name: "JavaScript / TypeScript", level: 90, icon: <><FaCode size={20} /> <SiTypescript size={20} /></>, gradient: "from-yellow-400 to-orange-500" },
-    { name: "Node.js / Express", level: 85, icon: <FaNodeJs size={26} />, gradient: "from-green-400 to-emerald-500" },
+    { name: "Node.js / Express", level: 95, icon: <FaNodeJs size={26} />, gradient: "from-green-400 to-emerald-500" },
     { name: "HTML / CSS / Tailwind", level: 98, icon: <><FaCode size={20} /> <SiTailwindcss size={20} /></>, gradient: "from-pink-400 to-purple-500" },
-    { name: "MongoDB / PostgreSQL", level: 80, icon: <FaDatabase size={26} />, gradient: "from-teal-400 to-indigo-500" },
-    { name: "MySQL", level: 82, icon: <SiMysql size={24} />, gradient: "from-blue-500 to-cyan-500" },
-    { name: "Laravel", level: 88, icon: <FaLaravel size={26} />, gradient: "from-red-500 to-orange-500" },
-    { name: "NestJS", level: 70, icon: <SiNestjs size={26} />, gradient: "from-rose-500 to-red-600" },
-    { name: "Django", level: 72, icon: <SiDjango size={24} />, gradient: "from-green-600 to-emerald-400" },
-    { name: "Angular", level: 60, icon: <FaAngular size={24} />, gradient: "from-red-600 to-pink-500" },
-    { name: "AWS / Docker", level: 75, icon: <><FaAws size={22} /> <FaDocker size={22} /></>, gradient: "from-blue-400 to-indigo-600" },
+    { name: "MongoDB / PostgreSQL", level: 90, icon: <FaDatabase size={26} />, gradient: "from-teal-400 to-indigo-500" },
+    { name: "MySQL", level: 95, icon: <SiMysql size={24} />, gradient: "from-blue-500 to-cyan-500" },
+    { name: "Laravel", level: 95, icon: <FaLaravel size={26} />, gradient: "from-red-500 to-orange-500" },
+    { name: "NestJS", level: 80, icon: <SiNestjs size={26} />, gradient: "from-rose-500 to-red-600" },
+    { name: "Django", level: 80, icon: <SiDjango size={24} />, gradient: "from-green-600 to-emerald-400" },
+    { name: "Angular", level: 75, icon: <FaAngular size={24} />, gradient: "from-red-600 to-pink-500" },
+    { name: "AWS / Docker", level: 70, icon: <><FaAws size={22} /> <FaDocker size={22} /></>, gradient: "from-blue-400 to-indigo-600" },
   ];
 
   return (

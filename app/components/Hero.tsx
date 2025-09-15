@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload, FaEye } from "react-icons/fa";
 
 const Hero = () => {
@@ -28,9 +27,7 @@ const Hero = () => {
         {/* Left Side - Text */}
         <div
           className={`transition-all duration-1000 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <div className="mb-6">
@@ -40,7 +37,10 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Lechisa</span>
+            Hi, I&apos;m{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+              Lechisa
+            </span>
           </h1>
 
           <h2 className="text-xl md:text-2xl text-gray-300 mb-6 font-medium">
@@ -53,22 +53,21 @@ const Hero = () => {
           </p>
 
           {/* Buttons */}
-<div className="flex flex-wrap gap-4 mb-6">
-  <button className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium 
-    hover:from-indigo-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20">
-    <FaEye /> View Projects
-  </button>
+          <div className="flex flex-wrap gap-4 mb-6">
+            <button className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium 
+              hover:from-indigo-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20">
+              <FaEye /> View Projects
+            </button>
 
-  <a
-    href="/Lechisa_Bedasa_CV.pdf"
-    download="Lechisa_Bedasa_CV.pdf"
-    className="flex items-center gap-2 border border-indigo-600 text-indigo-400 px-6 py-3 rounded-xl font-medium 
-      hover:bg-indigo-900/30 transition-all transform hover:scale-105"
-  >
-    <FaDownload /> Download CV
-  </a>
-</div>
-
+            <a
+              href="/Lechisa_Bedasa_CV.pdf"
+              download="Lechisa_Bedasa_CV.pdf"
+              className="flex items-center gap-2 border border-indigo-600 text-indigo-400 px-6 py-3 rounded-xl font-medium 
+                hover:bg-indigo-900/30 transition-all transform hover:scale-105"
+            >
+              <FaDownload /> Download CV
+            </a>
+          </div>
 
           {/* Social Icons */}
           <div className="flex space-x-6 text-2xl text-gray-400">
@@ -84,38 +83,15 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side - Profile Image */}
-        <div
-          className={`relative transition-all duration-1000 delay-300 ${
-            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-          }`}
-        >
-          <div className="w-80 h-80 mx-auto relative">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-indigo-700 rounded-full blur-3xl opacity-40 animate-pulse-slow"></div>
-            
-            {/* Outer ring */}
-            <div className="absolute inset-0 border-4 border-transparent rounded-full bg-gradient-to-r from-indigo-700 to-purple-700 p-1">
-              <div className="w-full h-full rounded-full bg-gray-900 overflow-hidden">
-                {/* Profile Picture */}
-                <div className="relative rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl w-full h-full">
-                  <Image
-                    src="/images/image.png"
-                    alt="Lechisa - Full Stack Developer"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+        {/* Right Side - Floating Skill Badges */}
+        <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
+          <div className="w-80 h-80 mx-auto relative flex items-center justify-center">
+            <div className="grid grid-cols-2 gap-4">
+              {[ "React", "Node.js","Laravel","Next js","Nest js","Django"].map((skill, idx) => (
+                <div key={idx} className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg flex items-center justify-center text-white font-bold text-lg animate-bounce-slow" style={{animationDelay: `${idx*200}ms`}}>
+                  {skill}
                 </div>
-              </div>
-            </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg animate-bounce-slow flex items-center justify-center">
-              <span className="text-xs font-bold">JS</span>
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 shadow-lg animate-bounce-slow-delayed flex items-center justify-center">
-              <span className="text-xs font-bold">TS</span>
+              ))}
             </div>
           </div>
         </div>

@@ -9,25 +9,28 @@ const About = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
+  const target = sectionRef.current; // copy once
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
       }
-    };
-  }, []);
+    },
+    { threshold: 0.2 }
+  );
+
+  if (target) {
+    observer.observe(target);
+  }
+
+  return () => {
+    if (target) {
+      observer.unobserve(target);
+    }
+  };
+}, []);
+
 
   return (
     <section
