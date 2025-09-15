@@ -29,36 +29,35 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef(null);
-const sectionRef = useRef(null);
-useEffect(() => {
-  const target = sectionRef.current; // copy once
+const cardRef = useRef<HTMLDivElement | null>(null);
 
+useEffect(() => {
+  const target = cardRef.current;
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
+        observer.unobserve(entry.target); // optional: unobserve after first reveal
       }
     },
     { threshold: 0.2 }
   );
 
-  if (target) {
-    observer.observe(target);
-  }
+  if (target) observer.observe(target);
 
   return () => {
-    if (target) {
-      observer.unobserve(target);
-    }
+    if (target) observer.unobserve(target);
   };
 }, []);
 
 
+
   return (
     <div
-      ref={cardRef}
-      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+     ref={cardRef}
+  className={`transition-all duration-700 ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+  }`}
     >
       <div
         className="bg-gray-800/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-indigo-500/30"
