@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { FaGithub, FaTwitter,FaFacebookF, FaLinkedin } from "react-icons/fa";
+import { FaGithub,FaFacebookF, FaLinkedin } from "react-icons/fa";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
