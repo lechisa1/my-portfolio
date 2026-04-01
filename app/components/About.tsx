@@ -105,7 +105,7 @@ const About = () => {
                     Lechisa Bedasa
                   </h3>
                   <p className="text-indigo-400 font-medium">
-                    Backend Developer & API Specialist
+                    Backend Developer | API Development
                   </p>
 
                   {/* Quick info */}
