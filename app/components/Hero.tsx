@@ -175,7 +175,7 @@ const Hero = () => {
             </div>
             <div>
               <h4 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                50+
+                100+
               </h4>
               <p className="text-gray-500 text-sm">API Endpoints</p>
             </div>

@@ -205,11 +205,12 @@ const ApiExpertise = () => {
         >
           <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 rounded-2xl p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-3">
-              Need a Backend Specialist?
+              Looking for a Backend Developer?
             </h3>
             <p className="text-gray-300 mb-6">
-              I specialize in building scalable APIs, microservices, and robust
-              backend systems. Let's discuss your project.
+              I work on building reliable APIs and backend systems, focusing on
+              clean architecture and practical solutions. Feel free to reach out
+              if you'd like to discuss your project.
             </p>
             <a
               href="#contact"
